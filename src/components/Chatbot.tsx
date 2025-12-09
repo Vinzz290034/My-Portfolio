@@ -8,7 +8,7 @@ interface Message {
 
 const Chatbot: FC = () => {
   // Configure your Flowise chatbot here
-  const FLOWISE_URL = 'https://flowise-backend-production.up.railway.app:8080';
+  const FLOWISE_URL = import.meta.env.VITE_API_HOST || '';
   const FLOWISE_CHAT_ID = import.meta.env.VITE_FLOWISE_CHAT_ID || '';
 
   const [isOpen, setIsOpen] = useState(false);

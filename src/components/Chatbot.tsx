@@ -8,8 +8,8 @@ interface Message {
 
 const Chatbot: FC = () => {
   // Configure your Flowise chatbot here
-  const FLOWISE_URL = process.env.REACT_APP_FLOWISE_URL || '';
-  const FLOWISE_CHAT_ID = process.env.REACT_APP_FLOWISE_CHAT_ID || '';
+  const FLOWISE_URL = import.meta.env.VITE_API_HOST || '';
+  const FLOWISE_CHAT_ID = import.meta.env.VITE_FLOWISE_CHAT_ID || '';
 
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([

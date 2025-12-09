@@ -8,5 +8,178 @@
   <body style="margin: 0; padding: 0;">
     <div id="root" style="width: 100%; height: 100%;"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Flowise AI Chatbot Embed -->
+    <script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/gh/Vinzz290034/FlowiseChatEmbed/dist/web.js"
+    Chatbot.init({
+        chatflowid: "d33602df-7078-47ee-8433-c5916bf372d4",
+        apiHost: "http://localhost:3000",
+        chatflowConfig: {
+            /* Chatflow Config */
+        },
+        observersConfig: {
+            /* Observers Config */
+        },
+        theme: {
+            button: {
+                backgroundColor: '#00FFFF',
+                right: 20,
+                bottom: 20,
+                size: 48,
+                dragAndDrop: true,
+                iconColor: '#000000',
+                autoWindowOpen: {
+                    autoOpen: false,
+                    openDelay: 2,
+                    autoOpenOnMobile: false
+                }
+            },
+            tooltip: {
+                showTooltip: false
+            },
+            disclaimer: {
+                title: 'Disclaimer',
+                message: "By using this chatbot, you agree to the <a target=\"_blank\" href=\"https://flowiseai.com/terms\">Terms & Condition</a>",
+                textColor: '#FFFFFF',
+                buttonColor: '#00FFFF',
+                buttonText: 'Start Chatting',
+                buttonTextColor: '#000000',
+                blurredBackgroundColor: 'rgba(0, 0, 0, 0.6)',
+                backgroundColor: '#1a1a1a'
+            },
+            customCSS: `
+                @keyframes slideDown {
+                    from {
+                        opacity: 0;
+                        transform: translateY(-20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                @keyframes buttonHover {
+                    from {
+                        transform: scale(1);
+                    }
+                    to {
+                        transform: scale(1.1);
+                    }
+                }
+                
+                .powered-by-flowise { 
+                    color: #000000 !important;
+                    background-color: #000000 !important;
+                    border-color: #000000 !important;
+                }
+                .powered-by-flowise * {
+                    color: #000000 !important;
+                    background-color: #000000 !important;
+                    border-color: #000000 !important;
+                }
+                footer {
+                    color: #000000 !important;
+                    background-color: #000000 !important;
+                    border-color: #000000 !important;
+                }
+                footer * {
+                    color: #000000 !important;
+                    background-color: #000000 !important;
+                }
+                [class*="header"], [class*="title"] {
+                    animation: slideDown 0.4s ease-out !important;
+                }
+                button:hover,
+                svg:hover,
+                [role="button"]:hover {
+                    transform: scale(1.1) !important;
+                    filter: brightness(1.2) !important;
+                    transition: all 0.3s ease-in-out !important;
+                }
+                button {
+                    transition: all 0.3s ease-in-out !important;
+                }
+                svg {
+                    transition: all 0.3s ease-in-out !important;
+                }
+                [role="button"] {
+                    transition: all 0.3s ease-in-out !important;
+                }
+                .loading-dot {
+                    background-color: #00FFFF !important;
+                }
+                .loading {
+                    color: #00FFFF !important;
+                }
+                .typing-indicator span {
+                    background-color: #00FFFF !important;
+                }
+                [class*="loading"] {
+                    color: #00FFFF !important;
+                    background-color: transparent !important;
+                }
+                [class*="loading"] * {
+                    color: #00FFFF !important;
+                    background-color: #00FFFF !important;
+                }
+                .dot {
+                    background-color: #00FFFF !important;
+                }
+                .spinner {
+                    border-color: #00FFFF !important;
+                    border-top-color: #00FFFF !important;
+                }
+            `,
+            chatWindow: {
+                showTitle: true,
+                showAgentMessages: true,
+                title: 'AI Assistant',
+                welcomeMessage: 'Hello! I\'m Vince\'s AI Assistant. I can help answer any questions you have about Vince, his skills, education, and experiences as a 4th-year BSIT student at the University of Cebu. How can I assist you today?',
+                errorMessage: 'Oops! Something went wrong. Please try again.',
+                backgroundColor: '#000000',
+                height: 700,
+                width: 400,
+                fontSize: 16,
+                clearChatOnReload: false,
+                sourceDocsTitle: 'Sources:',
+                renderHTML: true,
+                botMessage: {
+                    backgroundColor: '#1a1a1a',
+                    textColor: '#FFFFFF',
+                    showAvatar: true,
+                    avatarSrc: 'https://img.icons8.com/color/256/000000/artificial-intelligence.png'
+                },
+                userMessage: {
+                    backgroundColor: '#00FFFF',
+                    textColor: '#000000',
+                    showAvatar: false
+                },
+                textInput: {
+                    placeholder: 'Ask me something...',
+                    backgroundColor: '#1a1a1a',
+                    textColor: '#FFFFFF',
+                    sendButtonColor: '#00FFFF',
+                    autoFocus: true,
+                    sendMessageSound: false,
+                    receiveMessageSound: false
+                },
+                feedback: {
+                    color: '#00FFFF'
+                },
+                dateTimeToggle: {
+                    date: true,
+                    time: true
+                },
+                footer: {
+                    textColor: '#666666',
+                    text: '',
+                    show: false
+                }
+            }
+        }
+    })
+    </script>
   </body>
 </html>

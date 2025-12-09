@@ -5,7 +5,6 @@ import Skills from './components/Skills';
 import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import ChatbotPlaceholder from './components/ChatbotPlaceholder';
 
 function App() {
   return (
@@ -17,9 +16,6 @@ function App() {
       <Education />
       <Contact />
       <Footer />
-
-      {/* AI Chatbot */}
-      <Chatbot />
     </div>
   );
 }

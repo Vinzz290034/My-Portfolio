@@ -56,7 +56,7 @@ export const projects: Project[] = [
     description: 'A beautiful e-commerce cake shop website featuring handcrafted cake designs with floral artistry. Fully responsive interface with product showcase, custom order system, and smooth user experience for Cebu-based bakery.',
     techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'JavaScript'],
     imageUrl: 'https://tse2.mm.bing.net/th/id/OIP.NGJepoMHJFGF2Pt7Tz5qRwHaEJ?rs=1&pid=ImgDetMain&o=7&rm=3',
-    liveUrl: 'https://fleurdegateauu-7r4tmalpb-vinzzzs-projects-fba675e8.vercel.app/',
+    liveUrl: 'https://fleurdegateau.vercel.app/',
     githubUrl: 'https://github.com/Vinzz290034/Fleur-de-G-teau.git',
   },
   {
@@ -65,7 +65,7 @@ export const projects: Project[] = [
     description: 'A comprehensive smart ledger accounting system for managing transactions, accounts, and financial records. Features include CSV import/export, transaction management, general ledger, balance sheet reports, and real-time financial calculations.',
     techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'JavaScript'],
     imageUrl: 'https://s3.amazonaws.com/a.storyblok.com/f/102628/785fa96b53/business-templates_basic-business-templates_general-ledger-template.jpg',
-    liveUrl: 'https://accountech-48e815sgi-vinzzzs-projects-fba675e8.vercel.app/',
+    liveUrl: 'https://accountech-wheat.vercel.app/',
     githubUrl: 'https://github.com/Vinzz290034/AccounTech.git',
   },
   {

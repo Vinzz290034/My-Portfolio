@@ -110,12 +110,21 @@ const Chatbot: FC = () => {
         return;
       }
 
+      const username = import.meta.env.VITE_FLOWISE_USERNAME || '';
+      const password = import.meta.env.VITE_FLOWISE_PASSWORD || '';
+
+      const headers: Record<string, string> = {
+        'Content-Type': 'application/json',
+      };
+
+      if (username && password) {
+        headers['Authorization'] = `Basic ${btoa(`${username}:${password}`)}`;
+      }
+
       // Call Flowise API
       const response = await fetch(`${FLOWISE_URL}/api/v1/prediction/${FLOWISE_CHAT_ID}`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers,
         body: JSON.stringify({
           question: userMessage,
           overrideConfig: {

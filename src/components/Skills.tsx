@@ -1,74 +1,105 @@
 import { FC } from 'react';
-import { Code, Database, Wrench, Smartphone } from 'lucide-react';
 import { skills } from '../data/mockData';
 import { useInView } from '../hooks/useInView';
 
+const categoryConfig = {
+  languages: {
+    label: 'Languages',
+    emoji: '🔤',
+    color: 'bg-violet-50 border-violet-100',
+    badge: 'bg-violet-100 text-violet-700',
+    bar: 'bg-gradient-to-r from-violet-400 to-indigo-500',
+  },
+  frameworks: {
+    label: 'Frameworks & Libraries',
+    emoji: '🧱',
+    color: 'bg-blue-50 border-blue-100',
+    badge: 'bg-blue-100 text-blue-700',
+    bar: 'bg-gradient-to-r from-blue-400 to-cyan-500',
+  },
+  platforms: {
+    label: 'Platforms & Tools',
+    emoji: '☁️',
+    color: 'bg-emerald-50 border-emerald-100',
+    badge: 'bg-emerald-100 text-emerald-700',
+    bar: 'bg-gradient-to-r from-emerald-400 to-teal-500',
+  },
+  practices: {
+    label: 'Practices & Concepts',
+    emoji: '📋',
+    color: 'bg-amber-50 border-amber-100',
+    badge: 'bg-amber-100 text-amber-700',
+    bar: 'bg-gradient-to-r from-amber-400 to-orange-500',
+  },
+} as const;
+
+const softSkills = [
+  { label: 'Communication', icon: '💬' },
+  { label: 'Leadership',    icon: '🏆' },
+  { label: 'Creative Thinking', icon: '💡' },
+  { label: 'Adaptability', icon: '🔄' },
+];
+
+const categories = ['languages', 'frameworks', 'platforms', 'practices'] as const;
+
 const Skills: FC = () => {
   const { ref: headerRef, isInView: headerInView } = useInView();
-  const { ref: softSkillsRef, isInView: softSkillsInView } = useInView();
-  const categoryIcons = {
-    frontend: <Code className="text-pop" size={24} />,
-    backend: <Database className="text-pop" size={24} />,
-    database: <Database className="text-pop" size={24} />,
-    tools: <Wrench className="text-pop" size={24} />,
-  };
-
-  const categoryNames = {
-    frontend: 'Frontend Development',
-    backend: 'Backend Development',
-    database: 'Database',
-    tools: 'Tools & Other Skills',
-  };
-
-  const categories = ['frontend', 'backend', 'database', 'tools'] as const;
+  const { ref: softRef, isInView: softInView } = useInView();
 
   return (
-    <section id="skills" className="min-h-screen py-20 bg-primary border-t border-pop/20">
-      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
-          <div ref={headerRef} className={`text-center mb-16 ${headerInView ? 'scroll-slide-up' : ''}`}>
-            <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4">
-              Technical <span className="text-pop">Skills</span>
-            </h2>
-            <p className="text-secondary/70 text-lg max-w-2xl mx-auto">
-              Technologies and tools I work with to build modern applications
-            </p>
-          </div>
+    <section id="skills" className="py-24 bg-bg border-t border-border">
+      <div className="max-w-6xl mx-auto px-6">
 
-          {/* Skills Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {categories.map((category) => {
-              const categorySkills = skills.filter((skill) => skill.category === category);
-              if (categorySkills.length === 0) return null;
+        {/* Section Header */}
+        <div
+          ref={headerRef}
+          className={`text-center mb-16 ${headerInView ? 'scroll-slide-up' : 'opacity-0'}`}
+        >
+          <span className="text-accent text-sm font-semibold tracking-widest uppercase mb-3 block">
+            Expertise
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-ink mb-4">
+            Technical Skills
+          </h2>
+          <p className="text-body text-lg max-w-xl mx-auto">
+            Technologies and tools I work with to build modern applications
+          </p>
+        </div>
 
-              return (
-                <SkillCard key={category} category={category} categorySkills={categorySkills} categoryNames={categoryNames} categoryIcons={categoryIcons} />
-              );
-            })}
-          </div>
+        {/* Skills Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          {categories.map((category, index) => {
+            const categorySkills = skills.filter((s) => s.category === category);
+            if (categorySkills.length === 0) return null;
+            return (
+              <SkillCard
+                key={category}
+                category={category}
+                categorySkills={categorySkills}
+                index={index}
+              />
+            );
+          })}
+        </div>
 
-          {/* Soft Skills */}
-          <div ref={softSkillsRef} className={`mt-12 bg-primary border-2 border-pop/20 rounded-2xl p-8 ${softSkillsInView ? 'scroll-slide-up' : ''}`}>
-            <h3 className="text-2xl font-semibold text-secondary mb-6 flex items-center gap-3">
-              <Smartphone className="text-pop" size={24} />
-              Soft Skills
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {[
-                'Communication Skills',
-                'Leadership Experience',
-                'Creative & Innovative Thinking',
-                'Learning/Adaptability Skills',
-              ].map((softSkill) => (
-                <div
-                  key={softSkill}
-                  className="bg-pop/10 border border-pop/30 rounded-lg p-4 text-center hover:bg-pop/20 transition-colors"
-                >
-                  <p className="text-secondary font-medium">{softSkill}</p>
-                </div>
-              ))}
-            </div>
+        {/* Soft Skills */}
+        <div
+          ref={softRef}
+          className={`mt-6 bg-surface border border-border rounded-2xl p-8 shadow-card ${softInView ? 'scroll-slide-up' : 'opacity-0'}`}
+        >
+          <h3 className="text-lg font-semibold text-ink mb-6 text-center">
+            Soft Skills
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {softSkills.map(({ label, icon }) => (
+              <div
+                key={label}
+                className="flex flex-col items-center gap-2 p-4 bg-bg rounded-xl border border-border hover:border-accent-mid hover:bg-accent-soft transition-all duration-200 text-center"
+              >
+                <span className="text-2xl">{icon}</span>
+                <p className="text-sm font-medium text-body">{label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -76,51 +107,66 @@ const Skills: FC = () => {
   );
 };
 
-export default Skills;
-
 interface SkillCardProps {
-  category: 'frontend' | 'backend' | 'database' | 'tools';
+  category: keyof typeof categoryConfig;
   categorySkills: typeof skills;
-  categoryNames: Record<'frontend' | 'backend' | 'database' | 'tools', string>;
-  categoryIcons: Record<'frontend' | 'backend' | 'database' | 'tools', React.ReactNode>;
+  index: number;
 }
 
-const SkillCard: FC<SkillCardProps> = ({ category, categorySkills, categoryNames, categoryIcons }) => {
+const SkillCard: FC<SkillCardProps> = ({ category, categorySkills, index }) => {
   const { ref, isInView } = useInView();
+  const cfg = categoryConfig[category];
 
   return (
     <div
       ref={ref}
-      className={`bg-primary border-2 border-pop/20 rounded-2xl p-6 hover:border-pop/40 transition-all duration-300 ${
-        isInView ? 'scroll-slide-up' : ''
+      className={`bg-surface border border-border rounded-2xl p-6 shadow-card hover:shadow-card-md transition-all duration-300 ${
+        isInView ? 'scroll-slide-up' : 'opacity-0'
       }`}
+      style={{ animationDelay: `${index * 120}ms` }}
     >
       {/* Category Header */}
       <div className="flex items-center gap-3 mb-6">
-        {categoryIcons[category]}
-        <h3 className="text-xl font-semibold text-secondary">
-          {categoryNames[category]}
-        </h3>
+        <div className={`w-10 h-10 rounded-xl flex items-center justify-center border ${cfg.color}`}>
+          <span className="text-lg">{cfg.emoji}</span>
+        </div>
+        <div>
+          <h3 className="font-semibold text-ink text-base">{cfg.label}</h3>
+          <p className="text-xs text-muted">{categorySkills.length} skills</p>
+        </div>
       </div>
 
-      {/* Skills List */}
+      {/* Skills */}
       <div className="space-y-4">
         {categorySkills.map((skill) => (
-          <div key={skill.name}>
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-secondary font-medium">{skill.name}</span>
-              <span className="text-pop text-sm">{skill.proficiency}%</span>
-            </div>
-            {/* Progress Bar */}
-            <div className="w-full bg-secondary/10 rounded-full h-2 overflow-hidden">
-              <div
-                className="bg-gradient-to-r from-pop to-pop-dark h-full rounded-full transition-all duration-500"
-                style={{ width: `${skill.proficiency}%` }}
-              ></div>
-            </div>
-          </div>
+          <SkillBar key={skill.name} skill={skill} cfg={cfg} isInView={isInView} />
         ))}
       </div>
     </div>
   );
 };
+
+interface SkillBarProps {
+  skill: typeof skills[0];
+  cfg: typeof categoryConfig[keyof typeof categoryConfig];
+  isInView: boolean;
+}
+
+const SkillBar: FC<SkillBarProps> = ({ skill, cfg, isInView }) => (
+  <div>
+    <div className="flex items-center justify-between mb-1.5">
+      <span className="text-sm font-medium text-ink">{skill.name}</span>
+      <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${cfg.badge}`}>
+        {skill.proficiency}%
+      </span>
+    </div>
+    <div className="w-full bg-border rounded-full h-1.5 overflow-hidden">
+      <div
+        className={`h-full rounded-full ${cfg.bar} ${isInView ? 'progress-fill' : ''}`}
+        style={{ width: isInView ? `${skill.proficiency}%` : '0%' }}
+      />
+    </div>
+  </div>
+);
+
+export default Skills;

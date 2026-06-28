@@ -11,7 +11,7 @@ export interface Project {
 
 export interface Skill {
   name: string;
-  category: 'frontend' | 'backend' | 'database' | 'tools';
+  category: 'languages' | 'frameworks' | 'platforms' | 'practices';
   proficiency: number; // 0-100
 }
 
@@ -26,7 +26,9 @@ export interface Certification {
   name: string;
   issuer: string;
   date: string;
+  description?: string;
   credentialId?: string;
+  fileUrl?: string;
 }
 
 export interface PersonalInfo {
@@ -42,36 +44,27 @@ export interface PersonalInfo {
 export const personalInfo: PersonalInfo = {
   name: 'Vince Andrew D. Santoya',
   role: 'Full Stack Developer',
-  bio: 'I am a 4th year BSIT Student that is passionate about creating modern web applications and solving complex problems with clean, efficient code.',
+  bio: 'I am a passionate Full Stack Developer who recently graduated with a Bachelor of Science in Information Technology from the University of Cebu Main Campus. I love building modern web applications and solving complex problems with clean, efficient code.',
   email: 'hanssantoya@gmail.com',
   location: 'Avocado St. Mambaling, Cebu City',
-  resumeUrl: '/CURRICULUM VITAE.pdf',
+  resumeUrl: '/Resume.pdf',
 };
 
 // Projects Showcase
 export const projects: Project[] = [
   {
     id: '1',
-    title: 'Fleur de Gâteau',
-    description: 'A beautiful e-commerce cake shop website featuring handcrafted cake designs with floral artistry. Fully responsive interface with product showcase, custom order system, and smooth user experience for Cebu-based bakery.',
-    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'JavaScript'],
-    imageUrl: 'https://tse2.mm.bing.net/th/id/OIP.NGJepoMHJFGF2Pt7Tz5qRwHaEJ?rs=1&pid=ImgDetMain&o=7&rm=3',
-    liveUrl: 'https://fleurdegateau.vercel.app/',
-    githubUrl: 'https://github.com/Vinzz290034/Fleur-de-G-teau.git',
+    title: 'UC METC SILMS',
+    description: 'A full-stack web management system for UC METC Cooperative that handles sales, inventory, locker rentals, memberships, billing, and real-time notifications.',
+    techStack: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Express', 'Socket.io', 'Tailwind CSS', 'Zustand', 'JWT'],
+    imageUrl: 'https://res.cloudinary.com/doas4qcdo/image/upload/v1782621697/cover2_iwhcjd.png',
+    liveUrl: 'https://uc-metc-coop.vercel.app/',
+    githubUrl: 'https://github.com/Vinzz290034/UC-METC-Coop-Alpha.git',
   },
   {
     id: '2',
-    title: 'AccounTech - Smart Ledger System',
-    description: 'A comprehensive smart ledger accounting system for managing transactions, accounts, and financial records. Features include CSV import/export, transaction management, general ledger, balance sheet reports, and real-time financial calculations.',
-    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'JavaScript'],
-    imageUrl: 'https://s3.amazonaws.com/a.storyblok.com/f/102628/785fa96b53/business-templates_basic-business-templates_general-ledger-template.jpg',
-    liveUrl: 'https://accountech-wheat.vercel.app/',
-    githubUrl: 'https://github.com/Vinzz290034/AccounTech.git',
-  },
-  {
-    id: '3',
     title: 'CHRONONAV',
-    description: 'ChronoNav is a PHP-based web application and landing site for a campus navigation and scheduling system. The project aims to help students import their class schedules (using OCR), view them in a smart calendar, receive reminders, and get turn-by-turn navigation across campus (including offline access).',
+    description: 'A PHP-based campus navigation and scheduling app with OCR schedule import, smart calendar, reminders, and turn-by-turn campus directions with offline support.',
     techStack: ['PHP', 'MySQL', 'Node.js', 'React', 'JavaScript'],
     imageUrl: 'https://www.telstra.com.au/content/dam/shared-component-assets/tecom/case-studies/unimap/hero-unimap-1128x650.jpg',
   },
@@ -79,31 +72,38 @@ export const projects: Project[] = [
 
 // Skills
 export const skills: Skill[] = [
-  // Frontend
-  { name: 'HTML/CSS', category: 'frontend', proficiency: 90 },
-  { name: 'JavaScript', category: 'frontend', proficiency: 85 },
-  { name: 'TypeScript', category: 'frontend', proficiency: 85 },
-  { name: 'React', category: 'frontend', proficiency: 85 },
-  { name: 'Vite', category: 'frontend', proficiency: 80 },
-  
-  // Backend
-  { name: 'Node.js', category: 'backend', proficiency: 80 },
-  { name: 'PHP', category: 'backend', proficiency: 85 },
-  { name: 'ASP.NET', category: 'backend', proficiency: 75 },
-  
-  // Database
-  { name: 'MySQL', category: 'database', proficiency: 85 },
-  
-  // Mobile
-  { name: 'Flutter/Dart', category: 'tools', proficiency: 80 },
-  
-  // Languages
-  { name: 'C#', category: 'tools', proficiency: 75 },
-  
-  // Tools
-  { name: 'Canva', category: 'tools', proficiency: 90 },
-  { name: 'Figma', category: 'tools', proficiency: 85 },
-  { name: 'Data Analysis', category: 'tools', proficiency: 80 },
+  // ── Languages ──────────────────────────────────────────────────────────────
+  { name: 'JavaScript', category: 'languages', proficiency: 85 },
+  { name: 'TypeScript', category: 'languages', proficiency: 85 },
+  { name: 'PHP',        category: 'languages', proficiency: 85 },
+  { name: 'C#',         category: 'languages', proficiency: 75 },
+  { name: 'Python',     category: 'languages', proficiency: 75 },
+  { name: 'SQL',        category: 'languages', proficiency: 80 },
+  { name: 'HTML/CSS',   category: 'languages', proficiency: 90 },
+
+  // ── Frameworks ─────────────────────────────────────────────────────────────
+  { name: 'ASP.NET Core Web API', category: 'frameworks', proficiency: 75 },
+  { name: 'FastAPI',              category: 'frameworks', proficiency: 70 },
+  { name: 'Django',               category: 'frameworks', proficiency: 70 },
+  { name: 'NextJS',               category: 'frameworks', proficiency: 75 },
+  { name: 'Angular',              category: 'frameworks', proficiency: 70 },
+  { name: 'React',                category: 'frameworks', proficiency: 85 },
+
+  // ── Platforms ──────────────────────────────────────────────────────────────
+  { name: 'Git',            category: 'platforms', proficiency: 90 },
+  { name: 'GitHub Actions', category: 'platforms', proficiency: 85 },
+  { name: 'Docker',         category: 'platforms', proficiency: 70 },
+  { name: 'Vercel',         category: 'platforms', proficiency: 80 },
+  { name: 'Bitbucket',      category: 'platforms', proficiency: 75 },
+  { name: 'Postman',        category: 'platforms', proficiency: 80 },
+  { name: 'Linux',          category: 'platforms', proficiency: 97 },
+
+  // ── Practices ──────────────────────────────────────────────────────────────
+  { name: 'Object-Oriented Design', category: 'practices', proficiency: 85 },
+  { name: 'CyberSecurity',          category: 'practices', proficiency: 90 },
+  { name: 'NLP',                    category: 'practices', proficiency: 70 },
+  { name: 'IoT',                    category: 'practices', proficiency: 70 },
+  { name: 'Agile/Scrum',            category: 'practices', proficiency: 85 },
 ];
 
 // Education
@@ -111,8 +111,8 @@ export const education: Education[] = [
   {
     degree: 'Bachelor of Science in Information Technology',
     institution: 'University of Cebu Main Campus',
-    period: '2022 - Present',
-    status: 'in-progress',
+    period: '2022 - 2026',
+    status: 'completed',
   },
   {
     degree: 'Senior High School',
@@ -136,7 +136,20 @@ export const education: Education[] = [
 
 // Certifications
 export const certifications: Certification[] = [
-  // Add certifications as they are earned
+  {
+    name: 'Introduction to Cybersecurity',
+    issuer: 'Cisco Networking Academy',
+    date: 'March 18, 2025',
+    description: 'Completed through the University of Cebu, this 6-hour course explored foundational cybersecurity concepts, threats, and career pathways in information assurance and security.',
+    fileUrl: '/Intro to Cybersec.pdf',
+  },
+  {
+    name: 'CCNAv7: Switching, Routing, and Wireless Essentials',
+    issuer: 'Cisco Networking Academy',
+    date: 'January 2, 2025',
+    description: 'Completed through the Cisco Networking Academy program, this course covered foundational networking concepts including switching, routing protocols, wireless technologies, and network security essentials.',
+    fileUrl: '/CCNA Switching Routing.pdf',
+  },
 ];
 
 // AI Assistant Context - Portfolio-specific knowledge base
@@ -152,7 +165,9 @@ Contact:
 - Location: ${personalInfo.location}
 
 Education:
-- ${education.map(e => `${e.degree} at ${e.institution} (${e.status === 'in-progress' ? 'Currently pursuing' : 'Completed'}) - ${e.period}`).join('\n- ')}
+- ${education.map(e => `${e.degree} at ${e.institution} (${e.status === 'completed' ? 'Completed' : 'In Progress'}) - ${e.period}`).join('\n- ')}
+
+Note: Vince graduated on June 9, 2026 with a BSIT degree from the University of Cebu Main Campus.
 
 Technical Skills:
 ${skills.map(s => `- ${s.name} (${s.category})`).join('\n')}

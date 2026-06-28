@@ -1,0 +1,21 @@
+{
+  // Disable the built-in CSS validator so it doesn't flag
+  // Tailwind's @tailwind and @apply directives as unknown.
+  // PostCSS + Tailwind handle validation at build time.
+  "css.validate": false,
+  "scss.validate": false,
+  "less.validate": false,
+
+  // Tell the Tailwind CSS IntelliSense extension where to find
+  // Tailwind directives so it provides full autocomplete.
+  "tailwindCSS.includeLanguages": {
+    "typescriptreact": "html",
+    "typescript": "html"
+  },
+  "tailwindCSS.experimental.classRegex": [],
+
+  // Associate CSS files with PostCSS for better syntax support.
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
+}

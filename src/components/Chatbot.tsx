@@ -8,7 +8,7 @@ interface Message {
 }
 
 const Chatbot: FC = () => {
-  const FLOWISE_URL = import.meta.env.VITE_API_HOST || '';
+  const FLOWISE_URL = (import.meta.env.VITE_API_HOST || '').replace(/\/+$/, '');
   const FLOWISE_CHAT_ID = import.meta.env.VITE_FLOWISE_CHAT_ID || '';
 
   const [isOpen, setIsOpen] = useState(false);

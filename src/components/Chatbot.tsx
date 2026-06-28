@@ -121,6 +121,14 @@ const Chatbot: FC = () => {
         headers['Authorization'] = `Basic ${btoa(`${username}:${password}`)}`;
       }
 
+      console.log('🔍 Chatbot Debugging Details:', {
+        FLOWISE_URL,
+        FLOWISE_CHAT_ID,
+        username,
+        password: password ? '***' + password.slice(-3) : 'EMPTY',
+        headers
+      });
+
       // Call Flowise API
       const response = await fetch(`${FLOWISE_URL}/api/v1/prediction/${FLOWISE_CHAT_ID}`, {
         method: 'POST',

@@ -138,7 +138,7 @@ const Hero: FC = () => {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce hidden lg:block">
           <button
             onClick={scrollToProjects}
             aria-label="Scroll to projects"

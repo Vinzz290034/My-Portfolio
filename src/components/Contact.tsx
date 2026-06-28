@@ -102,13 +102,13 @@ const Contact: FC = () => {
           <p className="text-sm font-semibold text-muted uppercase tracking-widest mb-6">
             Connect with me
           </p>
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full">
             <a
               href="https://github.com/Vinzz290034"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-border text-body hover:text-accent hover:border-accent-mid hover:bg-accent-soft font-medium text-sm transition-all duration-200"
+              className="flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-2.5 rounded-xl border border-border text-body hover:text-accent hover:border-accent-mid hover:bg-accent-soft font-medium text-sm transition-all duration-200"
             >
               <Github size={18} />
               GitHub
@@ -118,7 +118,7 @@ const Contact: FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-border text-body hover:text-accent hover:border-accent-mid hover:bg-accent-soft font-medium text-sm transition-all duration-200"
+              className="flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-2.5 rounded-xl border border-border text-body hover:text-accent hover:border-accent-mid hover:bg-accent-soft font-medium text-sm transition-all duration-200"
             >
               <Facebook size={18} />
               Facebook
@@ -126,7 +126,7 @@ const Contact: FC = () => {
             <a
               href={`mailto:${personalInfo.email}`}
               aria-label="Email"
-              className="flex items-center gap-2 px-5 py-2.5 rounded-xl border border-border text-body hover:text-accent hover:border-accent-mid hover:bg-accent-soft font-medium text-sm transition-all duration-200"
+              className="flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-2.5 rounded-xl border border-border text-body hover:text-accent hover:border-accent-mid hover:bg-accent-soft font-medium text-sm transition-all duration-200"
             >
               <Mail size={18} />
               Email

@@ -124,15 +124,6 @@ const Hero: FC = () => {
                 alt="Vince Andrew D. Santoya"
                 className="relative w-56 h-56 md:w-72 md:h-72 rounded-full object-cover shadow-card-xl border-4 border-surface"
               />
-
-              {/* Floating badge */}
-              <div className="absolute -bottom-2 -right-2 bg-surface border border-border shadow-card-md rounded-xl px-3 py-2 flex items-center gap-2">
-                <span className="text-lg">💻</span>
-                <div>
-                  <p className="text-xs font-semibold text-ink leading-none">Full Stack</p>
-                  <p className="text-xs text-muted leading-none mt-0.5">Developer</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>

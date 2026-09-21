@@ -133,11 +133,6 @@ const Contact: FC = () => {
             </a>
           </div>
         </div>
-
-        {/* Bottom note */}
-        <p className="text-center text-muted text-sm mt-8">
-          Open to new opportunities and collaborations ✨
-        </p>
       </div>
     </section>
   );

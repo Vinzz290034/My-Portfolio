@@ -1,32 +1,37 @@
 import { FC } from 'react';
+import { Code2, Layers, Server, Workflow } from 'lucide-react';
 import { skills } from '../data/mockData';
 import { useInView } from '../hooks/useInView';
 
 const categoryConfig = {
   languages: {
     label: 'Languages',
-    emoji: '🔤',
+    icon: Code2,
+    iconColor: 'text-violet-600',
     color: 'bg-violet-50 border-violet-100',
     badge: 'bg-violet-100 text-violet-700',
     bar: 'bg-gradient-to-r from-violet-400 to-indigo-500',
   },
   frameworks: {
     label: 'Frameworks & Libraries',
-    emoji: '🧱',
+    icon: Layers,
+    iconColor: 'text-blue-600',
     color: 'bg-blue-50 border-blue-100',
     badge: 'bg-blue-100 text-blue-700',
     bar: 'bg-gradient-to-r from-blue-400 to-cyan-500',
   },
   platforms: {
     label: 'Platforms & Tools',
-    emoji: '☁️',
+    icon: Server,
+    iconColor: 'text-emerald-600',
     color: 'bg-emerald-50 border-emerald-100',
     badge: 'bg-emerald-100 text-emerald-700',
     bar: 'bg-gradient-to-r from-emerald-400 to-teal-500',
   },
   practices: {
     label: 'Practices & Concepts',
-    emoji: '📋',
+    icon: Workflow,
+    iconColor: 'text-amber-600',
     color: 'bg-amber-50 border-amber-100',
     badge: 'bg-amber-100 text-amber-700',
     bar: 'bg-gradient-to-r from-amber-400 to-orange-500',
@@ -127,7 +132,7 @@ const SkillCard: FC<SkillCardProps> = ({ category, categorySkills, index }) => {
       {/* Category Header */}
       <div className="flex items-center gap-3 mb-6">
         <div className={`w-10 h-10 rounded-xl flex items-center justify-center border ${cfg.color}`}>
-          <span className="text-lg">{cfg.emoji}</span>
+          <cfg.icon size={20} className={cfg.iconColor} />
         </div>
         <div>
           <h3 className="font-semibold text-ink text-base">{cfg.label}</h3>

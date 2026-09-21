@@ -63,6 +63,14 @@ export const projects: Project[] = [
   },
   {
     id: '2',
+    title: 'Coop Sync',
+    description: 'A comprehensive cooperative loan monitoring and financial management system featuring automated loan amortization (flat-rate & diminishing balance), savings accounts, revolving funds, check vouchers, delinquency tracking, and audit ledgers.',
+    techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Express', 'PostgreSQL', 'Recharts', 'JWT'],
+    imageUrl: '/coop-sync.png',
+    githubUrl: 'https://github.com/Vinzz290034/UC_Coop_Loan-Monitoring-System.git',
+  },
+  {
+    id: '3',
     title: 'CHRONONAV',
     description: 'A PHP-based campus navigation and scheduling app with OCR schedule import, smart calendar, reminders, and turn-by-turn campus directions with offline support.',
     techStack: ['PHP', 'MySQL', 'Node.js', 'React', 'JavaScript'],

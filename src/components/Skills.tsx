@@ -34,10 +34,10 @@ const categoryConfig = {
 } as const;
 
 const softSkills = [
-  { label: 'Communication', icon: '💬' },
-  { label: 'Leadership',    icon: '🏆' },
-  { label: 'Creative Thinking', icon: '💡' },
-  { label: 'Adaptability', icon: '🔄' },
+  'Communication',
+  'Leadership',
+  'Creative Thinking',
+  'Adaptability',
 ];
 
 const categories = ['languages', 'frameworks', 'platforms', 'practices'] as const;
@@ -91,12 +91,11 @@ const Skills: FC = () => {
             Soft Skills
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {softSkills.map(({ label, icon }) => (
+            {softSkills.map((label) => (
               <div
                 key={label}
-                className="flex flex-col items-center gap-2 p-4 bg-bg rounded-xl border border-border hover:border-accent-mid hover:bg-accent-soft transition-all duration-200 text-center"
+                className="flex items-center justify-center p-4 bg-bg rounded-xl border border-border hover:border-accent-mid hover:bg-accent-soft transition-all duration-200 text-center"
               >
-                <span className="text-2xl">{icon}</span>
                 <p className="text-sm font-medium text-body">{label}</p>
               </div>
             ))}

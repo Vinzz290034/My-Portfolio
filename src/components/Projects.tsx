@@ -69,13 +69,24 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, index }) => {
       }`}
       style={{ animationDelay: `${index * 100}ms` }}
     >
-      {/* Project Image */}
+      {/* Project Image / Looping Video */}
       <div className="relative h-48 overflow-hidden bg-bg flex-shrink-0">
-        <img
-          src={project.imageUrl}
-          alt={project.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-        />
+        {project.imageUrl.endsWith('.mp4') || project.imageUrl.endsWith('.webm') ? (
+          <video
+            src={project.imageUrl}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        ) : (
+          <img
+            src={project.imageUrl}
+            alt={project.title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        )}
         <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/10 transition-colors duration-300" />
 
         {/* Status pill */}

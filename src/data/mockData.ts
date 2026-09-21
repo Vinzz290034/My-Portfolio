@@ -57,7 +57,7 @@ export const projects: Project[] = [
     title: 'UC METC SILMS',
     description: 'A full-stack web management system for UC METC Cooperative that handles sales, inventory, locker rentals, memberships, billing, and real-time notifications.',
     techStack: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Express', 'Socket.io', 'Tailwind CSS', 'Zustand', 'JWT'],
-    imageUrl: 'https://res.cloudinary.com/doas4qcdo/image/upload/v1782621697/cover2_iwhcjd.png',
+    imageUrl: '/silms-cover.mp4',
     liveUrl: 'https://uc-metc-coop.vercel.app/',
     githubUrl: 'https://github.com/Vinzz290034/UC-METC-Coop-Alpha.git',
   },
@@ -66,7 +66,7 @@ export const projects: Project[] = [
     title: 'CHRONONAV',
     description: 'A PHP-based campus navigation and scheduling app with OCR schedule import, smart calendar, reminders, and turn-by-turn campus directions with offline support.',
     techStack: ['PHP', 'MySQL', 'Node.js', 'React', 'JavaScript'],
-    imageUrl: 'https://www.telstra.com.au/content/dam/shared-component-assets/tecom/case-studies/unimap/hero-unimap-1128x650.jpg',
+    imageUrl: '/chrononav.jpg',
   },
 ];
 

@@ -1,5 +1,5 @@
 import { FC, useState } from 'react';
-import { ExternalLink, Github, ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
+import { Github, ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
 import { projects } from '../data/mockData';
 import { useInView } from '../hooks/useInView';
 
@@ -159,17 +159,6 @@ const ProjectCard: FC<ProjectCardProps> = ({ project, index }) => {
             >
               <Github size={15} />
               Source
-            </a>
-          )}
-          {project.liveUrl && (
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-body hover:text-accent transition-colors duration-200"
-            >
-              <ExternalLink size={15} />
-              Live Demo
             </a>
           )}
           {project.liveUrl && (

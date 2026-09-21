@@ -67,6 +67,7 @@ export const projects: Project[] = [
     description: 'A comprehensive cooperative loan monitoring and financial management system featuring automated loan amortization (flat-rate & diminishing balance), savings accounts, revolving funds, check vouchers, delinquency tracking, and audit ledgers.',
     techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Express', 'PostgreSQL', 'Recharts', 'JWT'],
     imageUrl: '/coop-sync-cover.mp4',
+    liveUrl: 'https://uc-coop-loan-monitoring.up.railway.app/',
     githubUrl: 'https://github.com/Vinzz290034/UC_Coop_Loan-Monitoring-System.git',
   },
   {

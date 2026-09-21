@@ -42,13 +42,13 @@ const Header: FC = () => {
           <a
             href="#home"
             onClick={(e) => { e.preventDefault(); scrollToSection('#home'); }}
-            className="group flex items-center gap-3 animate-fade-in"
+            className="group flex items-center gap-3 animate-fade-in min-w-0"
           >
-            <div className="w-10 h-10 rounded-xl overflow-hidden shadow-sm group-hover:shadow-card-md group-hover:scale-105 transition-all duration-300 bg-surface flex items-center justify-center border border-border">
+            <div className="flex-shrink-0 w-10 h-10 rounded-xl overflow-hidden shadow-sm group-hover:shadow-card-md group-hover:scale-105 transition-all duration-300 bg-surface flex items-center justify-center border border-border">
               <img src="/Vinzz.png" alt="Vinzz Logo" className="w-full h-full object-cover" />
             </div>
-            <div className="flex flex-col">
-              <span className="text-lg font-bold text-ink tracking-tight group-hover:text-accent transition-colors duration-200">
+            <div className="flex flex-col min-w-0">
+              <span className="text-base sm:text-lg font-bold text-ink tracking-tight group-hover:text-accent transition-colors duration-200 truncate">
                 Vince Andrew Santoya
               </span>
               <span className="text-xs text-muted font-medium tracking-wide">

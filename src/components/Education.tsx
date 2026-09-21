@@ -8,7 +8,7 @@ const Education: FC = () => {
 
   return (
     <section id="education" className="py-24 bg-surface border-t border-border">
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
 
         {/* Section Header */}
         <div
@@ -29,7 +29,7 @@ const Education: FC = () => {
         {/* Timeline */}
         <div className="relative">
           {/* Vertical line */}
-          <div className="absolute left-6 top-0 bottom-0 w-px bg-border" />
+          <div className="absolute left-4 sm:left-6 top-0 bottom-0 w-px bg-border" />
 
           <div className="space-y-8">
             {education.map((edu, index) => (
@@ -137,28 +137,32 @@ const EducationItem: FC<EducationItemProps> = ({ edu, index }) => {
   return (
     <div
       ref={ref}
-      className={`relative flex gap-6 ${isInView ? 'scroll-slide-up' : 'opacity-0'}`}
+      className={`relative flex gap-3 sm:gap-6 ${isInView ? 'scroll-slide-up' : 'opacity-0'}`}
       style={{ animationDelay: `${index * 80}ms` }}
     >
       {/* Timeline dot */}
       <div className="flex-shrink-0 relative z-10 mt-1">
         <div
-          className={`w-12 h-12 rounded-full flex items-center justify-center border-2 shadow-card ${
+          className={`w-8 h-8 sm:w-12 sm:h-12 rounded-full flex items-center justify-center border-2 shadow-card ${
             isActive
               ? 'bg-accent border-accent text-white'
               : 'bg-surface border-border text-muted'
           }`}
         >
           {isActive
-            ? <Clock size={18} />
-            : <CheckCircle2 size={18} />
+            ? <Clock size={14} className="sm:hidden" />
+            : <CheckCircle2 size={14} className="sm:hidden" />
+          }
+          {isActive
+            ? <Clock size={18} className="hidden sm:block" />
+            : <CheckCircle2 size={18} className="hidden sm:block" />
           }
         </div>
       </div>
 
       {/* Content Card */}
       <div
-        className={`flex-1 bg-surface border rounded-2xl p-6 shadow-card hover:shadow-card-md transition-shadow duration-200 mb-2 ${
+        className={`flex-1 min-w-0 bg-surface border rounded-2xl p-4 sm:p-6 shadow-card hover:shadow-card-md transition-shadow duration-200 mb-2 ${
           isActive ? 'border-accent-mid' : 'border-border'
         }`}
       >

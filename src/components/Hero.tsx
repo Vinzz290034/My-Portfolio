@@ -24,8 +24,29 @@ const Hero: FC = () => {
       {/* Interactive dot-grid canvas — dots scatter on mouse hover */}
       <ParticleBackground />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-20">
-        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-24">
+
+          {/* ── Profile Photo (shown first on mobile) ───────────────── */}
+          <div className="flex-shrink-0 animate-fade-in delay-200 order-first lg:order-last">
+            <div className="relative">
+              {/* Decorative ring — indigo + rose gradient border */}
+              <div className="absolute -inset-3 rounded-full bg-gradient-to-br from-accent/20 via-accent-mid/20 to-rose/15 blur-sm" />
+              <div
+                className="absolute -inset-1 rounded-full border-2"
+                style={{
+                  background: 'linear-gradient(white, white) padding-box, linear-gradient(135deg, #6366F1, #F43F5E) border-box',
+                  borderColor: 'transparent',
+                }}
+              />
+
+              <img
+                src="https://res.cloudinary.com/deua2yipj/image/upload/ar_1:1,c_auto,g_auto/2c17c1b2-9043-4c49-95b1-40489152c427.jpg"
+                alt="Vince Andrew D. Santoya"
+                className="relative w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full object-cover shadow-card-xl border-4 border-surface"
+              />
+            </div>
+          </div>
 
           {/* ── Text content ────────────────── */}
           <div className="flex-1 text-center lg:text-left">
@@ -37,18 +58,18 @@ const Hero: FC = () => {
             </div>
 
             {/* Heading */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-ink leading-[1.08] tracking-tight mb-6 animate-slide-up delay-100">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-ink leading-[1.08] tracking-tight mb-6 animate-slide-up delay-100">
               Hi, I'm{' '}
               <span style={nameGradientStyle}>Vince Andrew</span>
             </h1>
 
             {/* Role */}
-            <p className="text-xl md:text-2xl font-medium text-body mb-5 animate-slide-up delay-200">
+            <p className="text-lg sm:text-xl md:text-2xl font-medium text-body mb-5 animate-slide-up delay-200">
               {personalInfo.role}
             </p>
 
             {/* Bio */}
-            <p className="text-base md:text-lg text-body leading-relaxed max-w-xl mx-auto lg:mx-0 mb-10 animate-slide-up delay-300">
+            <p className="text-sm sm:text-base md:text-lg text-body leading-relaxed max-w-xl mx-auto lg:mx-0 mb-10 animate-slide-up delay-300">
               {personalInfo.bio}
             </p>
 
@@ -58,7 +79,7 @@ const Hero: FC = () => {
                 href={personalInfo.resumeUrl}
                 download
                 id="hero-download-resume"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-accent hover:bg-accent-hover text-white font-semibold rounded-xl transition-all duration-200 shadow-sm hover:shadow-card-md text-sm"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-accent hover:bg-accent-hover text-white font-semibold rounded-xl transition-all duration-200 shadow-sm hover:shadow-card-md text-sm"
               >
                 <Download size={18} />
                 Download Resume
@@ -70,7 +91,7 @@ const Hero: FC = () => {
                   e.preventDefault();
                   document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-surface hover:bg-bg border border-border-dark text-ink font-semibold rounded-xl transition-all duration-200 shadow-sm hover:shadow-card-md text-sm"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-surface hover:bg-bg border border-border-dark text-ink font-semibold rounded-xl transition-all duration-200 shadow-sm hover:shadow-card-md text-sm"
               >
                 Get in Touch
               </a>
@@ -106,26 +127,6 @@ const Hero: FC = () => {
             </div>
           </div>
 
-          {/* ── Profile Photo ───────────────── */}
-          <div className="flex-shrink-0 animate-fade-in delay-200">
-            <div className="relative">
-              {/* Decorative ring — indigo + rose gradient border */}
-              <div className="absolute -inset-3 rounded-full bg-gradient-to-br from-accent/20 via-accent-mid/20 to-rose/15 blur-sm" />
-              <div
-                className="absolute -inset-1 rounded-full border-2"
-                style={{
-                  background: 'linear-gradient(white, white) padding-box, linear-gradient(135deg, #6366F1, #F43F5E) border-box',
-                  borderColor: 'transparent',
-                }}
-              />
-
-              <img
-                src="https://res.cloudinary.com/deua2yipj/image/upload/ar_1:1,c_auto,g_auto/2c17c1b2-9043-4c49-95b1-40489152c427.jpg"
-                alt="Vince Andrew D. Santoya"
-                className="relative w-56 h-56 md:w-72 md:h-72 rounded-full object-cover shadow-card-xl border-4 border-surface"
-              />
-            </div>
-          </div>
         </div>
 
         {/* Scroll indicator */}
@@ -141,6 +142,7 @@ const Hero: FC = () => {
         </div>
       </div>
     </section>
+
   );
 };
 

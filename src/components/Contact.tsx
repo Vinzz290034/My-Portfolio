@@ -10,7 +10,7 @@ const Contact: FC = () => {
 
   return (
     <section id="contact" className="py-24 bg-bg border-t border-border">
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
 
         {/* Section Header */}
         <div

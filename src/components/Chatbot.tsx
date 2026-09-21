@@ -16,7 +16,7 @@ const Chatbot: FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: "👋 Hi! I'm Vince's portfolio assistant. Ask me about my skills, projects, education, or professional experience!"
+      content: "👋 Hi! I'm Vince's portfolio assistant. Ask me about Vince's skills, projects, education, or professional experience!"
     }
   ]);
   const [input, setInput] = useState('');
@@ -35,7 +35,7 @@ const Chatbot: FC = () => {
     setMessages([
       {
         role: 'assistant',
-        content: "👋 Hi! I'm Vince's portfolio assistant. Ask me about my skills, projects, education, or professional experience!"
+        content: "👋 Hi! I'm Vince's portfolio assistant. Ask me about Vince's skills, projects, education, or professional experience!"
       }
     ]);
     setInput('');
